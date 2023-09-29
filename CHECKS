@@ -1,0 +1,4 @@
+WAIT=2
+ATTEMPTS=10
+
+/health

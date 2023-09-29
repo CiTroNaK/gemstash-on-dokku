@@ -1,0 +1,11 @@
+:base_path: <%= ENV.fetch("GEMSTASH_BASE_PATH", "/data") %>
+:cache_type: memory
+:rubygems_url: https://rubygems.org
+:puma_threads: <%= (ENV['GEMSTASH_PUMA_THREADS'] || 5).to_i %>
+:bind: tcp://0.0.0.0:5000
+:protected_fetch: <%= ENV['GEMSTASH_PROTECTED_FETCH'] == 'true' ? 'true' : 'false' %>
+:fetch_timeout: 20
+:log_file: :stdout
+
+:db_adapter: <%= ENV.fetch("GEMSTASH_DB_ADAPTER", "postgres") %>
+:db_url: <%= ENV["DATABASE_URL"] %>
